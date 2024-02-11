@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="216" viewBox="0 0 2048 216">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        font-size: 300px;
+        text-anchor: middle;
+        font-family: "Tw Cen MT";
+      }
+
+      .cls-1 {
+        fill: #296cc7;
+      }
+
+      .cls-2 {
+        fill: #eee;
+      }
+    </style>
+  </defs>
+  <text id="STUDIO" class="cls-1" x="1544.667" y="200.625"><tspan x="1544.667">STUDIO</tspan></text>
+  <text id="CORTEX" class="cls-2" x="507.668" y="200.625"><tspan x="507.668">CORTEX</tspan></text>
+</svg>
