@@ -34,12 +34,15 @@
             src="https://playcanv.as/p/vYNU0pGL/"
             frameborder="0"
           ></iframe>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#demos">Demo</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-circle-xmark" onclick="closemenu()"></i>
           </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <!-- This div has the front text in it -->
         <div id="presentation">
@@ -56,7 +59,7 @@
             <div class="presentation-col-2">
               <iframe
                 src="https://playcanv.as/p/RMCMPVQV/"
-                style="height: 400px; width: 800px"
+                style="height: 100%; width: 100%;"
                 frameborder="0"
               ></iframe>
             </div>
@@ -131,16 +134,66 @@
     <!-- This div has the portfolio section in it -->
     <div id="demos">
       <div class="container">
-        <h1 class="sub-title">Demos</h1>
+        <h1 class="sub-title">Our Demos</h1>
         <div class="demo-list">
           <div class="demo">
-            <img src="images/cortex logo.png" alt="" />
+            <img src="images/Env_demo.jpg" alt="" />
+            <div class="layer">
+              <h3>Sci-Fi Game Environment</h3>
+              <p>A Sci-Fi depiction of a futuristic cyberpunk train station</p>
+              <a href="https://www.artstation.com/artwork/XgOw2y"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
           <div class="demo">
-            <img src="images/cortex logo.png" alt="" />
+            <img src="images/Abstract_Viz_demo.jpg" alt="" />
+            <div class="layer">
+              <h3>Abstract 3D Visual</h3>
+              <p>An abstract decorative 3D visualization</p>
+              <a href="https://www.artstation.com/artwork/yDNyPx"><i class="fas fa-external-link-alt"></i></a>
+            </div>
           </div>
-          <div class="demo">
-            <img src="images/cortex logo.png" alt="" />
+          </div>
+          <a href="https://www.artstation.com/catsound3d" class="btn">See more</a>
+        </div>
+      </div>
+      <!-- This div has the partners section in it -->
+      <div id="partners">
+        <div class="container">
+          <h1 class="sub-title">Our Partners</h1>
+          <div class="row">
+            <div class="partner-box">
+              <a href="https://tynassit.medium.com/">
+                <img src="images/tynass_logo.jpg" alt="Logo of the Tynass it startup">
+                <h3>Tynass IT</h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- This div has the contact section in it -->
+      <div id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">
+                  Contact Us
+                </h1>
+                <p><i class="fa-solid fa-paper-plane"></i> medamineelmaaoui@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i> +216 50 368 250</p>
+                <div class="social-icons">
+                  <a href="www.linkedin.com/in/mohamed-amine-elmaaoui-144666229"><i class="fa-brands fa-linkedin"></i></a>
+                  <a href="https://www.artstation.com/catsound3d"><i class="fa-brands fa-artstation"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+              <form name="submit-to-google-sheet">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                <button type="submit" class="btn btn2">Submit</button>
+              </form>
+              <span id="msg"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -155,4 +208,22 @@
 
   <!-- Our codes -->
   <script src="js/main.js"></script>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwrbUk2fn_d3jesll-Xko006Jmz7ZbhNo9HCd1QiMWMw3MSawr1WsW3TC5iu_dsKWJm/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+          msg.innerHTML = "Submitted Successfully"
+          setTimeout(function(){
+            msg.innerHTML = ""
+          }, 5000)
+          form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </html>
