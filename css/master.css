@@ -187,7 +187,7 @@ nav ul li a:hover::after{
     margin-bottom: 30 px;
 }
 .services-list div h2 {
-    font-size: 30px;
+    font-size: 16px;
     font-weight: 500 px;
     margin-bottom: 15px;
 }
@@ -442,7 +442,7 @@ nav .fa-solid{
         font-size: 14px;
     }
     .services-list div h2 {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 500 px;
         margin-bottom: 15px;
     }
@@ -508,7 +508,7 @@ nav .fa-solid{
         font-size: 14px;
     }
     .services-list div h2 {
-        font-size: 20px;
+        font-size: 14px;
         font-weight: 500 px;
         margin-bottom: 15px;
     }
